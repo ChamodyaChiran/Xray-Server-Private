@@ -131,7 +131,7 @@ cat << EOF > /var/www/$DOMAIN_NAME/html/index.html
         <title>iamtrazy</title>
     </head>
     <body>
-        <h1>I LOVE TAYLOR SWIFT</h1>
+        <h1>#GOHOMEGOTA #SAVESRILANKA</h1>
     </body>
 </html>
 EOF
