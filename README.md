@@ -25,13 +25,13 @@ Manage Script
 
 2)sudo reboot (update එකෙන් පසු restart කිරීමට)
 
-4)sudo git clone https://github.com/iamtrazy/bash-xray-script
+4)sudo git clone https://github.com/ChamodyaChiran/bash-xray-script-2
 
-5)cd bash-xray-script
+5)cd bash-xray-script-2
 
-6)sudo chmod +x xray-nodomain.sh
+6)sudo chmod +x xray-whatever.sh
 
-7)sudo ./xray-nodomain.sh
+7)sudo ./xray-whatever.sh
 
 ------------------------------------------
 
