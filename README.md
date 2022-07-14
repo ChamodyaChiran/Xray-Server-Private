@@ -1,14 +1,8 @@
 # Bash|Xray-Script
 
-* UPDATE 21/05/2021 - added xray-nodomain script (see usage and installation below)
-
-
-![logo](https://telegra.ph/file/4e19dd26926234ca32b68.jpg)
-
-
+* UPDATE 14/07/2022
 
 Xray-Script එක Use කරල ඔයාට High speed Network Connection එකක් / Low ping / Full stable Connection එකක් අත්විදින්න පුලුවන් ...
-
 
 Manage Script
 
@@ -19,30 +13,130 @@ Manage Script
 * DNS use නොකර Ip එකෙන් direct connect කරගන්න xray-nodomain ස්ක්‍රිප්ට් එක භාවිතා කරන්න.
 
 ------------------------------------------
-## :book: Installation - Without DNS
+## :book: Basic Installation
 
 1)apt-get update -y && apt-get upgrade -y
 
 2)sudo reboot (update එකෙන් පසු restart කිරීමට)
 
-4)sudo git clone https://github.com/ChamodyaChiran/bash-xray-script-2
+4)sudo git clone https://github.com/ChamodyaChiran/Xray-Server-Private
 
-5)cd bash-xray-script-2
+5)cd Xray-Server-Private
 
-6)sudo chmod +x xray-whatever.sh
+6)sudo chmod +x xray-nodomain.sh
 
-7)sudo ./xray-whatever.sh
+7)sudo ./xray-nodomain.sh
 
+## :book: Custom Installation - With Or Without DNS
+
+1.xray-whatever.sh
+Feature-Adblock
+Protocol-Vless Xtls 443
+         Vless Grpc 443
+         Vmess NonTLS 80
+Custom Settings
+  1.Vless Xtls
+      Port-443
+      Encryption-None
+      Network-TCP 
+      HeaderType-None 
+      TransportLayer-XTLS 
+      Sni-www.host.com 
+      FlowControl-XTLS-RPRX-Direct 
+      AllowInsecure-True
+  2.Vless Grpc
+      Port-443
+      Encryption-None
+      Network-Grpc
+      GrpcServiceName-grpc
+      TransportLayer-TLS 
+      Sni-www.host.com 
+      AllowInsecure-True
+  3.Vmess NonTLS
+      Port-80
+      AlterID-0
+      Encryption-Auto
+      Network-TCP 
+      HeaderType-Http
+      HttpHost-www.host.com
+      HttpPath-/
+      AllowInsecure-False
+
+2.xray-nodomain.sh
+Feature-Adblock
+Protocol-Vless Xtls 443
+         Vless Grpc 443
+         Vmess NonTLS 80
+Custom Settings
+  1.Vless Xtls
+      Port-443
+      Encryption-None
+      Network-TCP 
+      HeaderType-None 
+      TransportLayer-XTLS 
+      Sni-www.host.com 
+      FlowControl-XTLS-RPRX-Direct 
+      AllowInsecure-True
+  2.Vless Grpc
+      Port-443
+      Encryption-None
+      Network-Grpc
+      GrpcServiceName-grpc
+      TransportLayer-TLS 
+      Sni-www.host.com 
+      AllowInsecure-True
+  3.Vmess NonTLS
+      Port-80
+      AlterID-0
+      Encryption-Auto
+      Network-TCP 
+      HeaderType-Http
+      HttpHost-www.host.com
+      HttpPath-/
+      AllowInsecure-False
+      
+3.xray-websocket.sh
+Protocol-Vless Ws 443
+         Vless Ws 80
+Custom Settings
+  1.Vless Ws
+      Port-443
+      Encryption-None
+      Network-Ws
+      TransportLayer-TLS 
+      WsHost-www.host.com 
+      WsPath-/
+      AllowInsecure-True
+  2.Vless Ws
+      Port-80
+      Encryption-None
+      Network-Ws
+      TransportLayer-TLS 
+      WsHost-www.host.com 
+      WsPath-/
+      AllowInsecure-True
+      
+4.CDN.sh  (Need Domain)
+Protocol-Vless Ws 443
+Custom Settings
+  1.Vless Ws
+      Host-www.Host.com
+      Port-443
+      Encryption-None
+      Network-Ws
+      TransportLayer-TLS 
+      WsHost-DomainName
+      WsPath-/iamtrazy
+      AllowInsecure-True
+  
 ------------------------------------------
 
 ## :book: How To Connect
 
-1)Android User කෙනෙක්නම් V2rayNG Download කරගන්න (
+1)Android User කෙනෙක්නම් V2rayNG,Anxray,Sagernet Download කරගන්න (
 https://github.com/2dust/v2rayNG)
 
-2)Windows User කෙනෙක්නම් V2rayN හො Netch Software දෙක Download කරගන්න
-
-![logo](https://telegra.ph/file/372eb568ce7a7776aa8c4.jpg)
+2)Windows User කෙනෙක්නම් V2rayN+Proxifire,Clash හො Netch Software Download කරගන්න
 
 * Http Port =  80
 
@@ -59,12 +153,3 @@ https://github.com/2dust/v2rayNG)
 4) sudo chmod 777 remove-xray.sh
 
 5) sudo ./remove-xray.sh
-
-## :octocat: Credits
-
-1. https://github.com/teddysun - BBR autoscript
-2. Team Rezoth - Contributor
-3. @Savinda1 - for the awesome readme file 😎
-
-
-☆ https://t.me/rezoth_tm ☆
