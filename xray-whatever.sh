@@ -15,7 +15,41 @@ rm -rf /usr/local/etc/xray/config.json
 cat << EOF > /usr/local/etc/xray/config.json
 {
   "log": {
+    "access": "",
+    "error": "",
     "loglevel": "warning"
+  },
+  "dns": {
+    "servers": [
+      "1.1.1.1"
+    ],
+    "queryStrategy": "UseIPv4"
+  },
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "type": "field",
+        "ip": [
+          "1.1.1.1"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "block"
+      }
+    ]
   },
   "inbounds": [
     {
@@ -121,7 +155,20 @@ cat << EOF > /usr/local/etc/xray/config.json
   ],
   "outbounds": [
     {
-      "protocol": "freedom"
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIPv4"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
     }
   ]
 }
