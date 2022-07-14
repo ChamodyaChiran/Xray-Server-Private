@@ -153,3 +153,11 @@ https://github.com/2dust/v2rayNG)
 4) sudo chmod 777 remove-xray.sh
 
 5) sudo ./remove-xray.sh
+
+
+
+Credits
+    https://github.com/teddysun - BBR autoscript
+    Team Rezoth - Contributor
+    @Savinda1 - for the awesome readme file 😎
+
