@@ -19,7 +19,7 @@ Manage Script
 
 2)sudo reboot (update එකෙන් පසු restart කිරීමට)
 
-4)sudo git clone https://github.com/ChamodyaChiran/Xray-Server-Private
+4)sudo git clone https://github.com/TishanNilusha/Xray-Server-Private
 
 5)cd Xray-Server-Private
 
